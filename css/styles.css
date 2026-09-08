@@ -996,7 +996,7 @@ body.is-locked { overflow: hidden; }
 .site-footer {
   background: var(--ink);
   color: rgba(255, 246, 238, .74);
-  padding-block: clamp(3.5rem, 7vw, 5rem) 2rem;
+  padding-block: clamp(3.5rem, 7vw, 5rem) 2.75rem;
   font-size: .9rem;
 }
 .site-footer__top {
@@ -1100,4 +1100,47 @@ body.is-locked { overflow: hidden; }
 @media (max-width: 420px) {
   .brand__tag { display: none; }
   .brand__name { font-size: .82rem; letter-spacing: .08em; }
+}
+
+/* --------------------------------------------------------------------------
+   Maker's mark
+   The Builds by Thor logo is supplied on a near black backing. Screening it
+   over the ink footer drops that backing out entirely and leaves only the
+   glow and the wordmark, so no dark rectangle shows against the warm brown.
+   -------------------------------------------------------------------------- */
+
+.footer-credit {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(255, 246, 238, .09);
+}
+.footer-credit__link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  opacity: .78;
+  transition: opacity .3s var(--ease);
+}
+.footer-credit__link:hover,
+.footer-credit__link:focus-visible { opacity: 1; }
+.footer-credit__label {
+  font-family: var(--font-body);
+  font-size: .62rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(255, 246, 238, .5);
+  transition: color .3s var(--ease);
+}
+.footer-credit__link:hover .footer-credit__label { color: rgba(255, 246, 238, .75); }
+.footer-credit__logo {
+  width: 92px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+@media (max-width: 560px) {
+  .footer-credit__logo { width: 82px; }
 }
