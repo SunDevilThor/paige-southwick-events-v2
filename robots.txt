@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sundevilthor.github.io/paige-southwick-events-v2/sitemap.xml
