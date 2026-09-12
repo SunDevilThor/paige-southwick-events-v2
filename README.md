@@ -85,7 +85,8 @@ No em dashes and no emojis anywhere in public copy or metadata.
 ## Deploying
 
 Live at https://paigesouthwickevents.com, served by Cloudflare Pages from the
-`SunDevilThor/paige-southwick-events-v2` repository.
+`SunDevilThor/paige-southwick-events-v2` repository. Cloudflare Pages is the only host for
+this site. GitHub Pages is not used.
 
 Cloudflare Pages settings:
 
@@ -96,16 +97,11 @@ Cloudflare Pages settings:
 | Build output directory | `/` |
 | Root directory | `/` |
 
-There is no build step, so Pages simply publishes the repository as it stands. Every push
-to `main` triggers a deploy.
+There is no build step, so Pages publishes the repository as it stands. Every push to `main`
+deploys automatically. Run `../deploy-claude-site.sh` to commit and push; it does not touch
+host settings.
 
-`_headers` sets security headers for all routes and cache policy for static assets. It is a
-Cloudflare Pages file and is ignored by other hosts.
+`_headers` sets security headers for all routes and cache policy for static assets.
 
-The repository also still publishes to
-https://sundevilthor.github.io/paige-southwick-events-v2/ for side by side comparison against
-the Codex `v1` build. Both copies carry canonical tags pointing at the real domain, so search
-engines treat paigesouthwickevents.com as the original.
-
-If the domain ever moves again, rebase the absolute URLs in each page's `canonical`,
-`og:url`, and `og:image` tags, plus `robots.txt` and `sitemap.xml`.
+If the domain ever moves, rebase the absolute URLs in each page's `canonical`, `og:url`, and
+`og:image` tags, plus `robots.txt` and `sitemap.xml`.
