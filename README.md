@@ -62,7 +62,7 @@ ivory automatically in a dark browser chrome.
 ## Inquiry flow
 
 `contact.html` holds a form that never posts anywhere. On submit, `main.js` assembles a
-`mailto:` link to `paigesouthwickevents@gmail.com` with a prefilled subject and a formatted
+`mailto:` link to `contact@paigesouthwickevents.com` with a prefilled subject and a formatted
 body, then hands it to the visitor's own mail client. Nothing is transmitted until the
 visitor sends the message themselves.
 
